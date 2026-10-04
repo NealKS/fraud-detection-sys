@@ -3,6 +3,8 @@
 
 > A real-time end-to-end fraud detection pipeline combining an XGBoost machine learning model, FastAPI inference backend, and a live Next.js streaming dashboard.
 
+**Live demo:** [https://fraud-detection-sys-nu.vercel.app](https://fraud-detection-sys-nu.vercel.app)
+
 ---
 
 ## 📁 Project Structure
