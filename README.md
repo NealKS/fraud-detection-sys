@@ -1,6 +1,33 @@
 # Fraud Detection System
+![Dashboard](dashboard.png)
 
 > A real-time end-to-end fraud detection pipeline combining an XGBoost machine learning model, FastAPI inference backend, and a live Next.js streaming dashboard.
+
+---
+
+## 📁 Project Structure
+
+```text
+fraud-detection-sys/
+├── backend/
+│   ├── main.py                     # FastAPI backend application & /predict endpoint
+│   ├── train_model.py              # XGBoost model training and evaluation script
+│   ├── make_samples.py             # Script to extract balanced test samples
+│   ├── fraud_model.joblib          # Trained XGBoost model artifact
+│   ├── requirements.txt            # Python dependencies
+│   └── sample_transactions.json    # Stream source transactions
+├── frontend/
+│   ├── app/
+│   │   ├── layout.tsx              # Root HTML & Tailwind layout
+│   │   ├── page.tsx                # Live dashboard UI with real-time stream table
+│   │   └── globals.css             # Tailwind CSS styles
+│   ├── public/
+│   │   └── sample_transactions.json# Sample transaction payload for stream
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── next.config.ts
+└── README.md                       # Project documentation
+```
 
 ---
 
@@ -65,7 +92,7 @@ brew install libomp
 cd backend
 python -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt  # or: pip install pandas scikit-learn xgboost fastapi uvicorn joblib
+pip install -r requirements.txt
 python train_model.py
 ```
 3. Generate the sample stream file:
